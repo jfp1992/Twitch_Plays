@@ -5,9 +5,10 @@
 # All code in this file is from Wituz's "Twitch Plays" tutorial at:
 # http://www.wituz.com/make-your-own-twitch-plays-stream.html
 
+import re
 import socket
 import sys
-import re
+
 
 class Twitch:
 
