@@ -1,5 +1,7 @@
 # Written by DougDoug (DougDoug on Youtube, DougDougW on Twitch)
 
+# Modified by jfp1992
+
 # Hello!
 # This file contains the main logic to process Twitch chat and convert it to game commands.
 # All sections that you need to update are labeled with a "TODO" comment.
