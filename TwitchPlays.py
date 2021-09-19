@@ -45,8 +45,7 @@ SendInput = ctypes.windll.user32.SendInput
 def get_key(key):
     """ This allows the user of the program to type for example 'left_control' or 'Left_Control' and still have it work.
     :param key: Grabs the corresponding hex code from the keys_dictionary, dictionary
-    :return:
-    """
+    :return: Hex code from keys_dictionary """
     return keys[key].upper()
 
 # KEY PRESS NOTES
