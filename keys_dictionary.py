@@ -34,16 +34,16 @@ keys = {
     'M':                0x32,
 
     # Numbers
-    'ONE': 0x02,
-    'TWO': 0x03,
-    'THREE': 0x04,
-    'FOUR': 0x05,
-    'FIVE': 0x06,
-    'SIX': 0x07,
-    'SEVEN': 0x08,
-    'EIGHT': 0x09,
-    'NINE': 0x0A,
-    'ZERO': 0x0B,
+    'ONE':              0x02,
+    'TWO':              0x03,
+    'THREE':            0x04,
+    'FOUR':             0x05,
+    'FIVE':             0x06,
+    'SIX':              0x07,
+    'SEVEN':            0x08,
+    'EIGHT':            0x09,
+    'NINE':             0x0A,
+    'ZERO':             0x0B,
 
     # Miscellaneous
     'ESC':              0x01,
