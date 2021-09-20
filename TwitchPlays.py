@@ -27,16 +27,13 @@ Mouse Controller, using pynput
 import time
 
 import pyautogui
-from pynput.mouse import Button, Controller
 
 import TwitchPlays_Connection
 from TwitchPlays_AccountInfo import TWITCH_USERNAME, TWITCH_OAUTH_TOKEN
 from keys_base_class import KeyAction
 
-mouse = Controller()
-
-# An optional countdown before the code actually starts running, so you have time to load up the game before messages are processed.
 # TODO: Set the "countdown" variable to whatever countdown length you want.
+from mouse_base_class import Mouse
 
 countdown = 2  # The number of seconds before the code starts running
 
@@ -45,10 +42,13 @@ while countdown > 0:
     countdown -= 1
     time.sleep(1)
 
+
+
 # Connects to your twitch chat, using your username and OAuth token.
 # TODO: make sure that your Twitch username and OAuth token are added to the "TwitchPlays_AccountInfo.py" file
 t = TwitchPlays_Connection.Twitch()
 t.twitch_connect(TWITCH_USERNAME, TWITCH_OAUTH_TOKEN)
+
 
 # Main loop, will constantly check input from chat
 while True:
@@ -64,7 +64,7 @@ while True:
                 """
                 TODO:
                 Now that you have a chat message, this is where you add your game logic.
-                
+
                 Use "mouse.press(Button.left)" or "mouse.release(Button.left)" to press/release the mouse. Can use Button.right for right click."""
 
                 # KeyAction('a').down()                                 Press and hold x key
@@ -110,9 +110,7 @@ while True:
 
                 # Presses the left mouse button down for 1 second, then releases it
                 if msg == 'shoot':
-                    mouse.press(Button.left)
-                    time.sleep(1)
-                    mouse.release(Button.left)
+                    Mouse().left_click()
 
                 ##################
                 # Other examples #
@@ -151,7 +149,7 @@ while True:
                     KeyAction().combo('left_control', 'x')
                 elif msg == "paste":
                     KeyAction().combo('left_control', 'v')
-                
+
                 # Can use pyautogui.typewrite() to type messages from chat into the keyboard.
                 # Here, if a chat message says "type ...", it will type out their text.
                 if msg.startswith("type "):
