@@ -1,5 +1,3 @@
-# Get key from dictionary in keys_dictionary
-
 import ctypes
 import time
 
@@ -36,7 +34,6 @@ class KeyAction:
         x = pynput._util.win32.INPUT(ctypes.c_ulong(1), ii_)
         ctypes.windll.user32.SendInput(1, ctypes.pointer(x), ctypes.sizeof(x))
 
-    # Releases a keyboard key if it is currently pressed down
     @staticmethod
     def __key_up(key):
         extra = ctypes.c_ulong(0)
@@ -44,7 +41,6 @@ class KeyAction:
         ii_.ki = pynput._util.win32.KEYBDINPUT(0, key, 0x0008 | 0x0002, 0, ctypes.cast(ctypes.pointer(extra), ctypes.c_void_p))
         x = pynput._util.win32.INPUT(ctypes.c_ulong(1), ii_)
         ctypes.windll.user32.SendInput(1, ctypes.pointer(x), ctypes.sizeof(x))
-
 
     def __key_hold(self, key, seconds):
         self.__key_down(key)
@@ -79,7 +75,6 @@ class KeyAction:
         for i in range(repeats):
             self.__key_hold(self.keys, delay)
 
-    # Helper function to press keys in succession
     def sequential_press(self, delay):
         """ Presses multiple keys in sequence
         :param delay: Time in seconds to wait between key presses
