@@ -1,6 +1,5 @@
 import time
 
-import pyautogui
 from pynput.mouse import Button, Controller
 from pynput.mouse import Events
 
