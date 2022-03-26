@@ -37,3 +37,11 @@ class Mouse:
         for i in range(count):
             mouse.scroll(0, -1)
             time.sleep(delay)
+
+# WIP
+    # def move(self, to_x, to_y):
+    #     pyautogui.moveTo(to_x, to_y)
+    #
+    # def drag(self, from_x, from_y, to_x, to_y):
+    #
+    #     self.left_click()
