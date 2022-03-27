@@ -14,7 +14,7 @@ def get_key(key):
     return keys[key]
 
 
-class KeyAction:
+class Key:
     def __init__(self, *key):
         """
         :param key: Can be multiple parameters, if you are simple holding a key, then pass one param like: KeyAction('A').down()

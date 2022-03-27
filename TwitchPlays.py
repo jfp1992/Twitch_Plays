@@ -31,7 +31,7 @@ import pyautogui
 
 import TwitchPlays_Connection
 from TwitchPlays_AccountInfo import TWITCH_USERNAME, TWITCH_OAUTH_TOKEN
-from keys_base_class import KeyAction
+from keys_base_class import Key
 # TODO: Set the "countdown" variable to whatever countdown length you want.
 from mouse_base_class import Mouse
 
@@ -62,13 +62,13 @@ while True:
 
             Use "mouse.press(Button.left)" or "mouse.release(Button.left)" to press/release the mouse. Can use Button.right for right click."""
 
-            # KeyAction('a').down()                                 Press and hold x key
-            # KeyAction('a').up()                                   Release x key if down
-            # KeyAction('a').hold(1)                                Press x key and hold x seconds
-            # KeyAction('a').combo('left_control', 'c')             Press and hold x key, then press and release x key
-            # KeyAction('a').repeat_input(5, 1)                     Repeat a key x times with x seconds in between
-            # KeyAction('a', 'b', 'c', 'etc').sequential_press(1)   Press a sequence of keys with x seconds in between
-            # KeyAction('a', 'b', 'c', 'etc').multi_press(0.1)      Press multiple keys at the same time then release after some delay (Note: this won't be perfect as there will be a few ms between)
+            # Key('a').down()                                 Press and hold x key
+            # Key('a').up()                                   Release x key if down
+            # Key('a').hold(1)                                Press x key and hold x seconds
+            # Key('a').combo('left_control', 'c')             Press and hold x key, then press and release x key
+            # Key('a').repeat_input(5, 1)                     Repeat a key x times with x seconds in between
+            # Key('a', 'b', 'c', 'etc').sequential_press(1)   Press a sequence of keys with x seconds in between
+            # Key('a', 'b', 'c', 'etc').multi_press(0.1)      Press multiple keys at the same time then release after some delay (Note: this won't be perfect as there will be a few ms between)
 
             # I've added some example videogame logic code below:
 
@@ -78,30 +78,30 @@ while True:
 
             # If the chat message is "left", then hold down the A key for 2 seconds
             if msg == 'left':
-                KeyAction('A').hold(2)
+                Key('A').hold(2)
 
             # If the chat message is "right", then hold down the D key for 2 seconds
             if msg == 'right':
-                KeyAction('d').hold(2)
+                Key('d').hold(2)
 
             # If message is "drive", then permanently hold down the W key
             if msg == 'drive':
-                KeyAction('s').up()  # release brake key first
-                KeyAction('w').down()  # start permanently driving
+                Key('s').up()  # release brake key first
+                Key('w').down()  # start permanently driving
 
             # If message is "reverse", then permanently hold down the S key
             if msg == 'reverse':
-                KeyAction('w').up()  # release drive key first
-                KeyAction('s').hold(2)  # start permanently reversing
+                Key('w').up()  # release drive key first
+                Key('s').hold(2)  # start permanently reversing
 
             # Release both the "drive" and "reverse" keys
             if msg == 'stop':
-                KeyAction('w').hold(2)
-                KeyAction('s').hold(2)
+                Key('w').hold(2)
+                Key('s').hold(2)
 
             # Press the spacebar for 0.7 seconds
             if msg == 'brake':
-                KeyAction('space').hold(0.7)
+                Key('space').hold(0.7)
 
             # Presses the left mouse button down for 1 second, then releases it
             if msg == 'shoot':
@@ -113,13 +113,13 @@ while True:
 
             # Press multiple keys in succession
             if msg == 'tapitbaby':
-                KeyAction('a', 'a', 'a').sequential_press(0.5)
+                Key('a', 'a', 'a').sequential_press(0.5)
 
             # Press multiple keys in succession 2
             if msg == 'tapitbaby':
-                KeyAction('a', 'a', 'a').sequential_press(0.1)
+                Key('a', 'a', 'a').sequential_press(0.1)
                 # or
-                KeyAction('a').repeat_input(3, 0.1)
+                Key('a').repeat_input(3, 0.1)
 
             ###############################
             # Example Miscellaneous Code #
@@ -137,13 +137,13 @@ while True:
 
             # Hold control press a key, then release
             if msg == "select all":
-                KeyAction().combo('left_control', 'a')
+                Key().combo('left_control', 'a')
             elif msg == "copy":
-                KeyAction().combo('left_control', 'c')
+                Key().combo('left_control', 'c')
             elif msg == "cut":
-                KeyAction().combo('left_control', 'x')
+                Key().combo('left_control', 'x')
             elif msg == "paste":
-                KeyAction().combo('left_control', 'v')
+                Key().combo('left_control', 'v')
 
             # Can use pyautogui.typewrite() to type messages from chat into the keyboard.
             # Here, if a chat message says "type ...", it will type out their text.
